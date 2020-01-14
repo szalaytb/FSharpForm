@@ -23,7 +23,11 @@ form.BackColor <- Color.FromArgb(r, g, b) )
 //form.Controls.Add(button1)
 //form.Controls.Add(button2)
 //form.Controls.Add(label)
-form.Controls.AddRange(new Control[]{button1,button2,label})
+
+form.Controls.AddRange([|button1 :> Control;
+button2 :> Control;
+label :> Control|]);
+
 form.Show()
 
 [<EntryPoint>]
